@@ -17,6 +17,7 @@ const client = new Client({
 client.config = require("./config.json");
 client.configToken = require("./config-token.json");
 client.events = new Collection();
+client.commands = new Collection();
 loadEvents(client);
 
 client.login(client.configToken.token);
