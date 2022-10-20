@@ -1,15 +1,22 @@
-const { Client } = require("discord.js");
-const client = new Client({ intents: ["Guilds"] });
+const {
+  Client,
+  GatewayIntentBits,
+  Partials,
+  Collection,
+} = require("discord.js");
+
+const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
+const { User, Message, GuildMember, ThreadMember } = Partials;
+const { loadEvents } = require("./handlers/eventHandler.js");
+
+const client = new Client({
+  intents: [Guilds, GuildMembers, GuildMessages],
+  partials: [User, Message, GuildMember, ThreadMember],
+});
 
 client.config = require("./config.json");
 client.configToken = require("./config-token.json");
+client.events = new Collection();
+loadEvents(client);
 
-client
-  .login(client.configToken.token)
-  .then(() => {
-    console.log(`Logged in as ${client.user.username}`);
-    client.user.setActivity(`${client.config.prefix}help`, {
-      type: "WATCHING",
-    });
-  })
-  .catch((err) => console.error(err));
+client.login(client.configToken.token);

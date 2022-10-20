@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.6.0"
+    "ascii-table": "^0.0.9",
+    "discord.js": "^14.6.0",
+    "glob": "^8.0.3"
   }
 }
