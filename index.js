@@ -17,6 +17,7 @@ client.config = require("./config.json");
 client.configCredentials = require("./config-credentials.json");
 client.events = new Collection();
 client.commands = new Collection();
+client.subCommands = new Collection();
 
 const { connect } = require("mongoose");
 connect(client.configCredentials.databaseURL, {}).then(() => {
