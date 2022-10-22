@@ -1,2 +1,4 @@
 node_modules
 config-token.json
+config-credentials.json
+package-lock.json
