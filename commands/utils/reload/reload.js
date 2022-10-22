@@ -5,7 +5,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("reload")
     .setDescription("Reloads the commands and events")
-    .setDefaultMemberPermissions(PermissionFlagsBits.ViewAuditLog)
+    .setDefaultMemberPermissions(PermissionFlagsBits.ManageRoles)
     .addSubcommand((options) =>
       options.setName("commands").setDescription("Reloads the commands")
     )
