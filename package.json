@@ -10,9 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/voice": "^0.13.0",
+    "@distube/soundcloud": "^1.2.2",
     "ascii-table": "^0.0.9",
     "discord.js": "^14.6.0",
+    "distube": "^4.0.4",
+    "ffmpeg-static": "^4.4.1",
     "glob": "^8.0.3",
+    "libsodium-wrappers": "^0.7.10",
     "mongoose": "^6.6.7",
     "ms": "^2.1.3"
   }
