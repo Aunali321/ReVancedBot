@@ -39,7 +39,7 @@ module.exports = {
       .setTimestamp();
 
     const playingEmbed = new EmbedBuilder()
-      .setTitle("Added to queue")
+      .setTitle("Searching...")
       .setColor("Green")
       .setFooter({
         text: `${client.user.username}`,
@@ -56,13 +56,13 @@ module.exports = {
       await client.distube.play(voiceChannel, song, {
         member: member,
         textChannel: member.channel,
-        message,
+        metadata: { i: interaction },
       });
       await interaction.editReply({
         embeds: [
           playingEmbed
             .setDescription(
-              `Playing ${song}` + " "`${voiceChannel.name}`,
+              `Playing ${song}` + " " + `${voiceChannel.name}`,
               `Requested by ${member.user.username}`
             )
             .setThumbnail(song.thumbnail),
